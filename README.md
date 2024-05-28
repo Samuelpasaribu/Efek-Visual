@@ -1,0 +1,365 @@
+# ![Hacker CSS Effects](https://img.icons8.com/dusk/64/000000/code-file.png) Hacker CSS Effects
+
+Yo, ini dia kode CSS keren buat bikin efek visual di situs web kamu. 🚀 Tutorial keren ini bakal ngajarin lo gimana caranya.
+
+Klik [di sini](https://www.samuelpasaribu.com/2024/05/contoh-kode-css-untuk-efek-visual.html) buat dapetin trik-triknya!
+
+## ⚡️ Efek yang Dibahas
+
+1. **Efek Hover Gambar**: Nampilin overlay teks keren pas lo hover di gambar.
+2. **Efek Hover Tombol**: Bikin tombol lo jadi makin keren pas lo hover, nih, dengan warna yang berubah-ubah.
+3. **Efek Pergeseran Warna Latar Belakang**: Bosen sama latar belakang yang biasa-biasa aja? Pakai efek ini biar tambah menarik!
+4. **Efek Efek Paralaks**: Bikin situs web lo makin hidup dengan efek paralaks simpel menggunakan gambar latar belakang dan CSS.
+
+## 💻 Cara Menggunakan
+
+1. Copy kode CSS dari tutorial yang kamu minati.
+2. Paste kode CSS ke dalam file CSS di proyek kamu.
+3. Sesuaikan kelas CSS dengan elemen HTML yang ingin kamu tambahkan efek tersebut.
+
+## 🌟 Contoh Kode
+
+```css
+/* 1. Efek Hover Berputar */
+.rotate:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
+
+/* 2. Animasi Gradien Latar Belakang Bergerak */  
+.gradient {
+    background: linear-gradient(45deg, #FFC107, #FF9800, #FF5722, #E91E63, #9C27B0, #673AB7, #3F51B5, #2196F3, #03A9F4, #00BCD4, #009688, #4CAF50);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+  
+/* 3. Animasi Menggoyangkan */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+  
+/* 4. Efek Bayangan Terangkat saat Hover */
+.lifted {
+    position: relative;
+}
+
+.lifted::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.1);
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lifted:hover::before {
+    opacity: 1;
+}
+  
+/* 5. Efek Pergelangan Tangan saat Hover */
+.hand:hover {
+    cursor: pointer;
+    animation: wave 0.5s infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+}
+
+/* 6. Animasi Teks Ketik */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange
+    }
+}
+  
+/* 7. Efek Glowing saat Hover */
+.glow:hover {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF5722, 0 0 40px #FF5722, 0 0 50px #FF5722, 0 0 60px #FF5722, 0 0 70px #FF5722;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #FF5722, 0 0 40px #FF5722, 0 0 50px #FF5722, 0 0 60px #FF5722, 0 0 70px #FF5722, 0 0 80px #FF5722;
+    }
+}
+
+/* 8. Efek Transformasi 3D */
+.threed {
+    perspective: 1000px;
+}
+
+.threed:hover .threed-item {
+    transform: rotateY(180deg);
+    transition: transform 1s;
+}
+
+.threed-item {
+    width: 200px;
+    height: 200px;
+    background: #FF5722;
+    color: #ffffff;
+    transform-style: preserve-3d;
+}
+  
+/* 9. Efek Paralaks saat Scrolling */
+.parallax {
+    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3iPANoxQ88O6eXZdc4lYPMSMsHMiJp60JUoWsWBmiv1-BasRtq1g-017Kj2o0Sp3gmLSGq2R0ogPJmEJXijATyybxjCt1gDbUh6LuP-F3MI44hAsLiISTRBzuj2IGMuzV5PLG9L0eqTb2AXRNvI5868ZXBF56ECO0Y9_l-RAZtauuvxBWaLoeDGN5Uyg/s1059-rw/model-6764241_1280%20%281%29_11zon.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.parallax-content {
+    transform: translateZ(0);
+    display: inline-block;
+}
+
+.parallax h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.parallax p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+  
+/* 10. Animasi Loading Bola Berputar */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #FF5722;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 11. Efek Ketebalan Teks saat Hover */
+.thick-text:hover {
+    font-weight: bold;
+    transition: font-weight 0.5s ease;
+}
+  
+/* 12. Animasi Border Berkedip */
+.blink-border {
+    border: 2px solid transparent;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        border-color: #FF5722;
+    }
+    to {
+        border-color: transparent;
+    }
+}
+  
+/* 13. Efek Bayangan Kaca pada Gambar */
+.glass-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+  
+/* 14. Efek Shiny Tekstur pada Background */
+.shiny-background {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIHqFUp-7B87_gFqtWd-yTGY0G3EbLD3MXXXh6F_9eX5lzLU2xDwMADuAPcUtYxh669RpqlLEh5mkDE8JdqyoKky_pJWoRP2cyXFOARCtTCUyGK7pMVJAth8j2vwF7Tw4BdL51MCgqwO_BggMQMp7hbRFVCFFvE_QJ-h3vnQD0eKh1q9EBB4o49oSpsEo/s1059-rw/ubuntu-3344434_1280.webp');
+    background-blend-mode: overlay;
+    background-size: cover;
+    color: #FFF;
+    text-align: center;
+    padding: 50px;
+}
+  
+/* 15. Animasi Scale pada Tombol */
+.scaling-button {
+    padding: 10px 20px;
+    background-color: #FF5722;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.scaling-button:hover {
+    transform: scale(1.1);
+}
+  
+/* 16. Efek Gelombang pada Tombol saat Hover */
+.wave-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.wave-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+  
+/* 17. Animasi Hover dengan Efek Shadow */
+.shadow-hover {
+    transition: box-shadow 0.3s;
+}
+
+.shadow-hover:hover {
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.5);
+}
+  
+/* 18. Efek Teks Gradient Berjalan */
+.text-gradient {
+    background: linear-gradient(to right, #44a9d7, #FFC107);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-gradient-animation 5s linear infinite;
+}
+
+@keyframes text-gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+  
+/* 19. Efek Teks Terbakar */
+.burn-text {
+    font-size: 3rem;
+    color: #FF5722;
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    background: #000;
+    animation: burn-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes burn-animation {
+    from {
+        text-shadow: 0 0 10px #FF5722, 0 0 20px #FF5722, 0 0 30px #FF5722, 0 0 40px #FF5722, 0 0 50px #FF5722, 0 0 60px #FF5722, 0 0 70px #FF5722;
+    }
+    to {
+        text-shadow: 0 0 20px #FF5722, 0 0 30px #FF5722, 0 0 40px #FF5722, 0 0 50px #FF5722, 0 0 60px #FF5722, 0 0 70px #FF5722, 0 0 80px #FF5722;
+    }
+}
+  
+/* 20. Efek Tulisan Tangan (Handwriting) */
+.handwriting {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    animation: handwriting-animation 4s steps(50) infinite;
+}
+
+@keyframes handwriting-animation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
